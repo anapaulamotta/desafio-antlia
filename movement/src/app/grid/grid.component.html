@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Mês</th>
+      <th>Ano</th>
+      <th>Código do Produto</th>
+      <th>Descrição do Produto</th>
+      <th>Número do Lançamento</th>
+      <th>Descrição</th>
+      <th>Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movement of movements">
+      <td>{{ movement.month }}</td>
+      <td>{{ movement.year }}</td>
+      <td>{{ movement.productCode }}</td>
+      <td>{{ movement.productDescription }}</td>
+      <td>{{ movement.releaseNumber }}</td>
+      <td>{{ movement.description }}</td>
+      <td>{{ movement.value }}</td>
+    </tr>
+  </tbody>
+</table>

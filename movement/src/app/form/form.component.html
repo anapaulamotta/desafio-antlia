@@ -1,0 +1,37 @@
+<form [formGroup]="form">
+  <div>
+    <label>Mês:</label>
+    <input type="number" formControlName="month">
+    <label>Ano:</label>
+    <input type="number" formControlName="year">
+  </div>
+
+  <div>
+    <label>Produto:</label>
+    <select formControlName="productCode" (change)="getProducts(); getCosifs($event)">
+      <option *ngFor="let product of products" [value]="product.productCode">{{ product.productDescription }}</option>
+    </select>
+    <label>Cosif:</label>
+    <select formControlName="cosifCode">
+      <option *ngFor="let cosif of cosifs" [value]="cosif.cosifCode">{{ cosif.cosifCodeClassification }}</option>
+    </select>
+  </div>
+
+
+  <div>
+    <label>Valor:</label>
+    <input formControlName="value" currencyMask>
+  </div>
+
+  <div>
+    <label>Descrição:</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <div>
+    <button (click)="cleanForm()">Limpar</button>
+    <button (click)="newForm()">Novo</button>
+    <button (click)="addForm()">Incluir</button>
+  </div>
+
+</form>
